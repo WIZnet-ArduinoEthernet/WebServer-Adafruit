@@ -15,6 +15,9 @@
  modified 02 Sept 2015
  by Arturo Guadalupi
  
+ A simple web server that shows the address of IPv4 or IPv6
+ 20190220 Taylor
+ by WIZnet
  */
 
 /**************************************************************************
@@ -46,11 +49,8 @@
 // Adafruit ssd1306_128x64_i2c
 
 #include <Wire.h>
-#include "Adafruit-GFX-Library\Adafruit_GFX.h"
-#include "Adafruit-GFX-Library\Adafruit_GFX.cpp"
-
-#include "Adafruit_SSD1306\Adafruit_SSD1306.h"
-#include "Adafruit_SSD1306\Adafruit_SSD1306.cpp"
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 
 //==========================================================================
 
