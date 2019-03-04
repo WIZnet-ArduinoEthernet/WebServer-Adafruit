@@ -1,0 +1,6 @@
+[submodule "Adafruit-GFX-Library"]
+	path = Adafruit-GFX-Library
+	url = https://github.com/WIZnet-ArduinoEthernet/Adafruit-GFX-Library
+[submodule "Adafruit_SSD1306"]
+	path = Adafruit_SSD1306
+	url = https://github.com/WIZnet-ArduinoEthernet/Adafruit_SSD1306
