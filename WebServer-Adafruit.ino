@@ -14,7 +14,7 @@
  by Tom Igoe
  modified 02 Sept 2015
  by Arturo Guadalupi
- 
+
  A simple web server that shows the address of IPv4 or IPv6
  20190220 Taylor
  by WIZnet
@@ -192,7 +192,7 @@ void setup() {
 
   // start the Ethernet connection and the server:
   #if 0
-  
+
   // Manual
   Ethernet.begin(mac, ip, myDns, gateway, subnet, lla, gua, sn6, gw6);
 
@@ -223,7 +223,7 @@ void setup() {
   Serial.println("Web Server address:");
   Serial.print("LLA:");
   Serial.println(Ethernet.linklocalAddress());
-  
+
   Serial.print("GUA:");
   Serial.println(Ethernet.globalunicastAddress());
   Serial.println(Ethernet.localIP());
@@ -243,7 +243,7 @@ void loop() {
     rcvString = "";
 
     while (client.connected()) {
-      
+
       if (client.available()) {
         char c = client.read();
         strFromIP += c;
@@ -269,7 +269,7 @@ void loop() {
               // process
               if(1 == ProcessValue()) {
                 // Passing 'GET /favicon.ico HTTP/1.1' except FireFox
-                
+
                 // ======================================================================
                 // Print to display Host IP Address
 
@@ -288,7 +288,7 @@ void loop() {
 
             client.println("<body>");
               client.println("<h1>WIZnet W6100 Dual Stack WebServer Demo</h1><br>");
-              
+
               client.print("Your ");
               if(6 == client.IPVis()) {
                 client.print("IPv6 Address is ");
@@ -360,7 +360,7 @@ void loop() {
 //==========================================================================
 //  Original
 //  https://github.com/zenmanenergy/ESP8266-Arduino-Examples/blob/master/helloWorld_urlencoded/urlencode.ino
-// 
+//
 
 uint8_t h2int(char c)
 {
@@ -416,6 +416,8 @@ int ProcessValue()
 
         a = (h2int(b) << 4) | h2int(c);
         rcvString += a;
+      } else if(a == '\n') {
+          break;
       } else {
         rcvString += a;
       }
@@ -428,7 +430,7 @@ int ProcessValue()
       }
     }
 
-    
+
     return 1;
   } else {
     return -1;
